@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>학교 안내도</title>
+<style>
+    body {
+        font-family: sans-serif;
+        margin: 20px;
+    }
+
+    /* 탭 버튼 스타일 */
+    .tab-buttons {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    .tab-buttons button {
+        padding: 10px 20px;
+        border: none;
+        background: #e0e0e0;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 15px;
+    }
+    .tab-buttons button.active {
+        background: #4b89dc;
+        color: white;
+    }
+
+    /* 탭 콘텐츠 */
+    .tab-content {
+        display: none;
+    }
+    .tab-content.active {
+        display: block;
+    }
+
+    /* 표 스타일 */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+    }
+    th, td {
+        border: 1px solid #bbb;
+        padding: 10px;
+        vertical-align: top;
+    }
+    th {
+        background: #f0f0f0;
+        width: 150px;
+    }
+
+    /* 이미지 스타일 */
+    .floor-img {
+        margin-top: 15px;
+        width: 100%;
+        border: 1px solid #ccc;
+    }
+</style>
+
+<script>
+    function openTab(tabId) {
+        document.querySelectorAll('.tab-content').forEach(div => {
+            div.classList.remove('active');
+        });
+        document.querySelectorAll('.tab-buttons button').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        document.getElementById(tabId).classList.add('active');
+        document.getElementById("btn-" + tabId).classList.add('active');
+    }
+</script>
+</head>
+
+<body>
+
+<h1>학교 안내도</h1>
+
+<!-- 탭 버튼 -->
+<div class="tab-buttons">
+    <button id="btn-floor1" class="active" onclick="openTab('floor1')">1층</button>
+    <button id="btn-floor2" onclick="openTab('floor2')">2층</button>
+    <button id="btn-floor3" onclick="openTab('floor3')">3층</button>
+    <button id="btn-floor4" onclick="openTab('floor4')">4층</button>
+</div>
+
+<!-- 1층 -->
+<div id="floor1" class="tab-content active">
+    <h2>1층 안내</h2>
+
+    <img class="floor-img" src="https://drive.google.com/uc?export=view&id=1WPdiP9kMTbv7-aJoXDU3j3T6KGwxOkEA" alt="1층 안내도">
+
+    <table>
+        <thead>
+            <tr><th>시설명</th><th>담당 교직원</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>행정실</td><td>최예진<br>최윤정<br>황도영<br>심희정<br>우순제<br>이선미</td></tr>
+            <tr><td>상담실</td><td>최정옥</td></tr>
+            <tr><td>진로교육실</td><td>이현숙</td></tr>
+            <tr><td>학습도움실</td><td>차순옥<br>현진욱<br>오명수<br>연인숙</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- 2층 -->
+<div id="floor2" class="tab-content">
+    <h2>2층 안내</h2>
+
+    <img class="floor-img" src="https://drive.google.com/uc?export=view&id=1cvjhXPlWd_3HmSan1cdTTdb_tjWMDRpK" alt="2층 안내도">
+
+    <table>
+        <thead>
+            <tr><th>시설명</th><th>담당 교직원</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>교무센터 (본교무실)</td>
+                <td>조광현<br>이윤미<br>김학일<br>이근웅<br>김혜은<br>홍연서<br>이명희<br>이하나<br>Afia<br>엄은지</td></tr>
+            <tr><td>교감실</td><td>서현주</td></tr>
+            <tr><td>1학년 교무실</td>
+                <td>유인윤<br>윤혜경<br>이욱<br>박도희<br>최성광<br>최선희<br>정미라</td></tr>
+            <tr><td>인쇄실</td><td>허한구</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- 3층 -->
+<div id="floor3" class="tab-content">
+    <h2>3층 안내</h2>
+
+    <img class="floor-img" src="https://drive.google.com/uc?export=view&id=1Em2EvLhUtFtTRDt2bNI_kz4jJ_WHLvOs" alt="3층 안내도">
+
+    <table>
+        <thead>
+            <tr><th>시설명</th><th>담당 교직원</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>학생생활안전부 (학생부실)</td>
+                <td>이혜진<br>정상현<br>신문수<br>김태종<br>김형준</td></tr>
+            <tr><td>보건실</td><td>이경민</td></tr>
+            <tr><td>수업연구1실</td>
+                <td>장보영<br>김진록<br>김상희<br>김경민</td></tr>
+            <tr><td>2학년 교무실</td>
+                <td>한상아<br>유혜빈<br>황석훈<br>박강석<br>이상협<br>조예진<br>김혜진</td></tr>
+            <tr><td>도서실</td><td>신정아</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- 4층 -->
+<div id="floor4" class="tab-content">
+    <h2>4층 안내</h2>
+
+    <img class="floor-img" src="https://drive.google.com/uc?export=view&id=1JauM_vFOQ_vGumYXRj0SdNFCfShb6M80" alt="4층 안내도">
+
+    <table>
+        <thead>
+            <tr><th>시설명</th><th>담당 교직원</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>3학년 교무실</td>
+                <td>채기수<br>조규현<br>이용우<br>이재호<br>엄지수<br>김용훈<br>이지은</td></tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
